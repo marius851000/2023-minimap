@@ -17,6 +17,17 @@
       "export_group": "starter"
     },
     {
+      "name": "cmcs",
+      "images": [
+        "source/cmcs.png"
+      ],
+      "x": 443,
+      "y": 723,
+      "priority": 8,
+      "autopick": true,
+      "export_group": "starter"
+    },
+    {
       "name": "eyes",
       "images": [
         "source/eyes.png"
