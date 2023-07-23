@@ -13,7 +13,7 @@
 import {constants} from "./constants";
 import {gm_fetch, headerStringToObject} from "./utils";
 
-const url = "http://ponyplace-cdn.ferrictorus.com/minimap.user.js";
+const url = "https://raw.githubusercontent.com/marius851000/2023-minimap/main/dist/minimap.user.js";
 
 (async function () {
   let etag: string | undefined;

@@ -106,7 +106,7 @@ export class BlobServer {
 
   getTemplate(templateName: string, options) {
     return {
-      canvasUrl: this.getTemplateUrl(templateName, "canvas"),
+      canvasUrl: this.getTemplateUrl(templateName, "autopick"),
       autoPickUrl: options.autoPick ? this.getTemplateUrl(templateName, "autopick") : undefined,
       maskUrl: options.mask ? this.getTemplateUrl(templateName, "mask") : undefined,
     }

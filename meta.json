@@ -1,7 +1,7 @@
 {
-  "name": "r/place MLP Minimap",
+  "name": "r/place Sr/PB Minimap",
   "author": "r/place MLP Minimap Authors",
-  "description": "Minimap overlay and automatic selection of pixel + color for r/place",
+  "description": "Minimap overlay and automatic selection of pixel + color for r/place (Sr/PB)",
   "namespace": "https://place.equestria.dev/",
   "grant": [
     "GM.xmlHttpRequest",
@@ -13,8 +13,8 @@
     "https://garlic-bread.reddit.com/embed*",
     "https://place.equestria.dev/embed*"
   ],
-  "downloadURL": "http://ponyplace-cdn.ferrictorus.com/loader.user.js",
-  "updateURL": "http://ponyplace-cdn.ferrictorus.com/loader.user.js",
+  "downloadURL": "https://raw.githubusercontent.com/marius851000/2023-minimap/main/dist/loader.user.jss",
+  "updateURL": "https://raw.githubusercontent.com/marius851000/2023-minimap/main/dist/loader.user.js",
   "connect": [
     "raw.githubusercontent.com",
     "media.githubusercontent.com",
@@ -22,5 +22,5 @@
     "ponyplace-cdn.ferrictorus.com",
     "ponyplace-compute.ferrictorus.com"
   ],
-  "version": "0.0.2"
+  "version": "0.1.0"
 }

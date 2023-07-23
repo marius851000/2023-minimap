@@ -1,5 +1,4 @@
 /node_modules/
-/dist/
 
 # Ignore krita autosave files becaue they are bugging me
 *-autosave.kra
