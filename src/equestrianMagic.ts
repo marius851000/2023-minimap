@@ -19,6 +19,11 @@ export class EquestrianMagic {
       .shadowRoot!.querySelector("garlic-bread-status-pill")!
       .shadowRoot!.querySelector(".main-text")!.innerHTML;
     if(pillStatus.includes("Place!")){
+      this.minimap.rPlace!.camera.applyPosition({
+        x: this.minimap.rPlace!.canvas.width / 2,
+        y: this.minimap.rPlace!.canvas.height / 2,
+        zoom: 0
+      });
       console.log("EqMagic: Waiting...");
       await waitMs(this.getPseudoWaitingTimeout());
       if(this.isWorking && this.minimap.selectRandPix()){
