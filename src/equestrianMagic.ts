@@ -8,13 +8,19 @@ export class EquestrianMagic {
   private isEnabled = false;
   private isWorking = false;
   private minimap: Minimap;
+  private audio: HTMLAudioElement;
   constructor (minimap: Minimap) {
     this.minimap = minimap;
+    this.audio = document.createElement("audio");
+    this.audio.src = "https://garlic-bread.reddit.com/media/interactions/select-color.mp3";
+    this.audio.volume = 0.1;
+    this.minimap.ui!.mlpMinimapBlock.appendChild(this.audio);
   }
   private getPseudoWaitingTimeout(){
     return pseudoWaitingMinTimeout + Math.floor(Math.random() * (pseudoWaitingMaxTimeout - pseudoWaitingMinTimeout));
   }
   private async processPinchOfMagic(){
+    this.audio.play();
     const pillStatus = this.minimap.rPlace!.embed
       .shadowRoot!.querySelector("garlic-bread-status-pill")!
       .shadowRoot!.querySelector(".main-text")!.innerHTML;
