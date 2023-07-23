@@ -61,7 +61,7 @@ export class Minimap {
         this.rPlace!.embed.showColorPicker = true;
         const selectedColor = this.rPlace!.embed.selectedColor;
         this.logger.log(`Ready to place pixel [x: ${randPixel.x}, y: ${randPixel.y}, color: ${selectedColor}, current-color: ${currentColor.data}, new-color: ${imageDataRight.data}]`);
-        return true;
+        if(this.rPlace!.camera.cameraAnimation.paused) return true;
       } catch (err) {
         console.error("Error getting pixel to place", err);
       }
