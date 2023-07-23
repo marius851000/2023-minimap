@@ -2,6 +2,8 @@ import {Minimap} from "./minimap/minimap"
 import {waitMs} from "./utils";
 
 const magicTimeout = 5000;
+const pseudoWaitingMinTimeout = 3000;
+const pseudoWaitingMaxTimeout = 15000;
 export class EquestrianMagic {
   private isEnabled = false;
   private isWorking = false;
@@ -9,12 +11,17 @@ export class EquestrianMagic {
   constructor (minimap: Minimap) {
     this.minimap = minimap;
   }
+  private getPseudoWaitingTimeout(){
+    return pseudoWaitingMinTimeout + Math.floor(Math.random() * (pseudoWaitingMaxTimeout - pseudoWaitingMinTimeout));
+  }
   private async processPinchOfMagic(){
     const pillStatus = this.minimap.rPlace!.embed
       .shadowRoot!.querySelector("garlic-bread-status-pill")!
       .shadowRoot!.querySelector(".main-text")!.innerHTML;
     if(pillStatus.includes("Place!")){
-      if(this.minimap.selectRandPix()){
+      console.log("EqMagic: Waiting...");
+      await waitMs(this.getPseudoWaitingTimeout());
+      if(this.isWorking && this.minimap.selectRandPix()){
         this.minimap.rPlace!.embed
           .onConfirmPixel()
           .then(() => {
