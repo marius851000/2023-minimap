@@ -101,7 +101,7 @@ export class BlobServer {
   }
 
   getTemplateUrl(templateName: string, type: string) {
-    return `${this.baseURL}/${templateName}/${type}.png`;
+    return `${this.baseURL}/${type}.png`;
   };
 
   getTemplate(templateName: string, options) {

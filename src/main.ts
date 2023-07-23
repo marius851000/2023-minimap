@@ -23,7 +23,7 @@ const autoPickAfterPlaceTimeout = 3000;
 
   const minimap = new Minimap(analyticsLogger);
 
-  const blobServer = new BlobServer("https://raw.githubusercontent.com/uis246/template/master/");
+  const blobServer = new BlobServer("https://raw.githubusercontent.com/uis246/template/master");
   minimap.templates.add("mlp", blobServer.getTemplate("mlp", {autoPick: true, mask: true}));
 
   await minimap.initialize();
