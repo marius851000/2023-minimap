@@ -1,4 +1,7 @@
 /node_modules/
 
+# Python
+/venv/
+
 # Ignore krita autosave files becaue they are bugging me
 *-autosave.kra
