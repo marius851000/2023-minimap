@@ -53,12 +53,7 @@ export class TemplatePixels {
 type UpdateResult = 'MaybeChangedCached' | 'MaybeChangedNotCached' | 'NotChanged';
 
 function mergeResponse(current: UpdateResult, resp: GM.Response<any>): UpdateResult {
-  const headers = headerStringToObject(resp.responseHeaders);
-  if (current == 'MaybeChangedNotCached' || !headers.etag)
-    return 'MaybeChangedNotCached';
-  if (current == 'MaybeChangedCached' || resp.status != 304)
-    return 'MaybeChangedCached';
-  return 'NotChanged';
+  return 'MaybeChangedNotCached';
 }
 
 export interface Template {
@@ -88,13 +83,9 @@ export class ImageTemplate implements Template {
 
   private async update(template: TemplatePixels, url: URL) {
     let headers = {};
-    if (template.cacheKey)
-      headers['If-None-Match'] = template.cacheKey;
     const resp = await ImageTemplate.fetchURL(url, {
       headers: headers
     });
-    if (resp.status == 304)
-      return 'NotChanged';
     if (resp.status != 200)
       throw resp;
     return {
@@ -106,16 +97,14 @@ export class ImageTemplate implements Template {
   async updateIfDifferent() {
     let changed: UpdateResult = 'NotChanged';
     const tr = await this.update(this.template, this.templateURL);
-    if (tr != 'NotChanged') {
-      this.template = tr.template;
-      changed = mergeResponse(changed, tr.response);
-    }
+    this.template = tr.template;
+    changed = mergeResponse(changed, tr.response);
+    
     if (this.mask) {
       const mr = await this.update(this.mask, this.maskURL!);
-      if (mr != 'NotChanged') {
-        this.mask = mr.template;
-        changed = mergeResponse(changed, mr.response);
-      }
+      
+      this.mask = mr.template;
+      changed = mergeResponse(changed, mr.response);
     }
     return changed;
   }
@@ -188,7 +177,7 @@ export class ImageTemplate implements Template {
 export async function updateLoop(workQueue: AsyncWorkQueue, getTemplate: () => Template,
                                  applyTemplate: () => void) {
   // Wait before trying to update.
-  await waitMs(60 * 1000);
+  await waitMs(240 * 1000);
   while (true) {
     try {
       const result = await workQueue.enqueue(async () => {
