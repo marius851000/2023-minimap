@@ -6,14 +6,99 @@
   },
   "templates": [
     {
-      "name": "static_original",
+      "name": "book page 8",
+      "enabled_utc": 1690057620,
       "images": [
-        "source/static_original.png"
+        "source/book_frame08.png"
       ],
       "use_reddit_coords": true,
-      "x": 600,
-      "y": 800,
-      "priority": 10,
+      "x": 544,
+      "y": 857,
+      "priority": 8,
+      "autopick": true,
+      "export_group": "starter"
+    },
+    {
+      "name": "infill",
+      "images": [
+        "source/infill.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 558,
+      "y": 879,
+      "priority": 6,
+      "autopick": true,
+      "export_group": "starter"
+    },
+    {
+      "name": "dash",
+      "images": [
+        "source/dash.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 501,
+      "y": 850,
+      "priority": 9,
+      "autopick": true,
+      "export_group": "starter"
+    },
+    {
+      "name": "carrot",
+      "images": [
+        "source/carrot.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 501,
+      "y": 835,
+      "priority": 7,
+      "autopick": true,
+      "export_group": "starter"
+    },
+    {
+      "name": "octybrit",
+      "images": [
+        "source/octybrit.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 500,
+      "y": 845,
+      "priority": 7,
+      "autopick": true,
+      "export_group": "starter"
+    },
+    {
+      "name": "derpy",
+      "images": [
+        "source/derpy2.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 672,
+      "y": 809,
+      "priority": 7,
+      "autopick": true,
+      "export_group": "starter"
+    },
+    {
+      "name": "base",
+      "images": [
+        "source/base.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 500,
+      "y": 895,
+      "priority": 8,
+      "autopick": true,
+      "export_group": "starter"
+    },
+    {
+      "name": "book base",
+      "images": [
+        "source/book_base.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 539,
+      "y": 845,
+      "priority": 9,
       "autopick": true,
       "export_group": "starter"
     },
@@ -23,8 +108,8 @@
         "source/LP_BJ.png"
       ],
       "use_reddit_coords": true,
-      "x": 687,
-      "y": 800,
+      "x": 549,
+      "y": 838,
       "priority": 9,
       "autopick": true,
       "export_group": "starter"
@@ -35,8 +120,8 @@
         "source/birb.png"
       ],
       "use_reddit_coords": true,
-      "x": 647,
-      "y": 789,
+      "x": 559,
+      "y": 834,
       "priority": 9,
       "autopick": true,
       "export_group": "starter"
@@ -47,9 +132,21 @@
         "source/TFH.png"
       ],
       "use_reddit_coords": true,
-      "x": 625,
-      "y": 790,
+      "x": 525,
+      "y": 835,
       "priority": 9,
+      "autopick": true,
+      "export_group": "starter"
+    },
+    {
+      "name": "stampy",
+      "images": [
+        "source/stampy.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 610,
+      "y": 834,
+      "priority": 4,
       "autopick": true,
       "export_group": "starter"
     },
@@ -59,9 +156,9 @@
         "source/background.png"
       ],
       "use_reddit_coords": true,
-      "x": 602,
-      "y": 781,
-      "priority": 8,
+      "x": 501,
+      "y": 835,
+      "priority": 4,
       "autopick": true,
       "export_group": "starter"
     },
@@ -97,18 +194,6 @@
       "autopick": true
     },
     {
-      "name": "m6_1x6_top",
-      "images": [
-        "source/m6_1x6_top.png"
-      ],
-      "use_reddit_coords": true,
-      "x": -575,
-      "y": -635,
-      "priority": 8,
-      "autopick": true,
-      "export_group": "expansion3"
-    },
-    {
       "name": "m6_1x6",
       "images": [
         "source/m6_1x6.png"
@@ -119,17 +204,6 @@
       "priority": 9,
       "autopick": true,
       "export_group": "expansion3"
-    },
-    {
-      "name": "tinytardis",
-      "images": [
-        "source/TinyTardis.png"
-      ],
-      "use_reddit_coords": true,
-      "x": -604,
-      "y": -624,
-      "priority": 5,
-      "autopick": true
     },
     {
       "name": "derp_box",
