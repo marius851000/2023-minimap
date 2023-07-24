@@ -177,7 +177,7 @@ export class ImageTemplate implements Template {
 export async function updateLoop(workQueue: AsyncWorkQueue, getTemplate: () => Template,
                                  applyTemplate: () => void) {
   // Wait before trying to update.
-  await waitMs(240 * 1000);
+  await waitMs(300 * 1000);
   while (true) {
     try {
       const result = await workQueue.enqueue(async () => {
