@@ -6,10 +6,10 @@
   },
   "templates": [
     {
-      "name": "book page 8",
+      "name": "book page 12",
       "enabled_utc": 1690057620,
       "images": [
-        "source/book_frame08.png"
+        "source/book_frame12.png"
       ],
       "use_reddit_coords": true,
       "x": 544,
@@ -49,7 +49,7 @@
       ],
       "use_reddit_coords": true,
       "x": 501,
-      "y": 835,
+      "y": 834,
       "priority": 7,
       "autopick": true,
       "export_group": "starter"
@@ -76,7 +76,7 @@
       "y": 809,
       "priority": 7,
       "autopick": true,
-      "export_group": "starter"
+      "export_group": "derpy"
     },
     {
       "name": "base",
@@ -171,7 +171,8 @@
       "x": -943,
       "y": 9,
       "priority": 6,
-      "autopick": true
+      "autopick": true,
+      "export_group": "pets"
     },
     {
       "name": "transtrixie",
@@ -228,6 +229,18 @@
       "autopick": true
     },
     {
+      "name": "bj",
+      "images": [
+        "source/bj.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 648,
+      "y": 803,
+      "priority": 2,
+      "autopick": true,
+      "export_group": "derpy"
+    },
+    {
       "name": "cozy",
       "images": [
         "source/cozy.png"
@@ -238,13 +251,25 @@
       "autopick": true
     },
     {
+      "name": "rook",
+      "images": [
+        "source/rook.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 716,
+      "y": 840,
+      "priority": 2,
+      "autopick": true,
+      "export_group": "derpy"
+    },
+    {
       "name": "sunpeek",
       "images": [
         "source/sunpeek.png"
       ],
       "use_reddit_coords": true,
-      "x": -385,
-      "y": -805,
+      "x": 659,
+      "y": 115,
       "priority": 4,
       "autopick": true
     },

@@ -7,10 +7,10 @@
   "world_csv_import": "https://docs.google.com/spreadsheets/d/1sIkfCgoVKWMWJbjenPn2dcvfuBFOegwMJxsGQ_MgsxU/gviz/tq?tqx=out:csv&sheet=Sheet1",
   "templates": [
     {
-      "name": "book page 8",
+      "name": "book page 12",
       "enabled_utc": 1690057620,
       "images": [
-        "../mlp/source/book_frame08.png"
+        "../mlp/source/book_frame12.png"
       ],
       "use_reddit_coords": true,
       "x": 544,
@@ -50,7 +50,7 @@
       ],
       "use_reddit_coords": true,
       "x": 501,
-      "y": 835,
+      "y": 834,
       "priority": 7,
       "autopick": true,
       "export_group": "starter"
@@ -77,7 +77,7 @@
       "y": 809,
       "priority": 7,
       "autopick": true,
-      "export_group": "starter"
+      "export_group": "derpy"
     },
     {
       "name": "base",
@@ -172,7 +172,8 @@
       "x": -943,
       "y": 9,
       "priority": 6,
-      "autopick": true
+      "autopick": true,
+      "export_group": "pets"
     },
     {
       "name": "transtrixie",
@@ -229,6 +230,18 @@
       "autopick": true
     },
     {
+      "name": "bj",
+      "images": [
+        "../mlp/source/bj.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 648,
+      "y": 803,
+      "priority": 2,
+      "autopick": true,
+      "export_group": "derpy"
+    },
+    {
       "name": "cozy",
       "images": [
         "../mlp/source/cozy.png"
@@ -239,13 +252,25 @@
       "autopick": true
     },
     {
+      "name": "rook",
+      "images": [
+        "../mlp/source/rook.png"
+      ],
+      "use_reddit_coords": true,
+      "x": 716,
+      "y": 840,
+      "priority": 2,
+      "autopick": true,
+      "export_group": "derpy"
+    },
+    {
       "name": "sunpeek",
       "images": [
         "../mlp/source/sunpeek.png"
       ],
       "use_reddit_coords": true,
-      "x": -385,
-      "y": -805,
+      "x": 659,
+      "y": 115,
       "priority": 4,
       "autopick": true
     },
@@ -268,12 +293,6 @@
       ],
       "x": 497,
       "y": 638,
-      "priority": 1,
-      "autopick": true
-    },
-    {
-      "name": "onepiece",
-      "endu": "https://raw.githubusercontent.com/Lopeh/onepiece-place/main/oneplace-template.json",
       "priority": 1,
       "autopick": true
     },
@@ -321,6 +340,34 @@
       "endu": "https://nyaan.moe/bocchiplace2023.json",
       "priority": 1,
       "autopick": false
+    },
+    {
+      "name": "superbear",
+      "endu": "https://raw.githubusercontent.com/jalenluorion/helpme/main/superbear.json",
+      "priority": 1,
+      "autopick": false
+    },
+    {
+      "name": "monster_hunter",
+      "images": [
+        "../mlp/source/monster_hunter.png"
+      ],
+      "use_reddit_coords": true,
+      "x": -1494,
+      "y": -354,
+      "priority": 1,
+      "autopick": true
+    },
+    {
+      "name": "monsterhigh",
+      "images": [
+        "../mlp/source/monsterhigh.png"
+      ],
+      "use_reddit_coords": true,
+      "x": -1381,
+      "y": 541,
+      "priority": 1,
+      "autopick": true
     }
   ]
 }
