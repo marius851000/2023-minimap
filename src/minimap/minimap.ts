@@ -7,6 +7,7 @@ import {MinimapTemplateController} from "../templateController";
 import {waitMs} from "../utils";
 import {html} from "uhtml";
 import {Logger} from "../logger";
+import {EquestrianMagic} from "../equestrianMagic";
 
 const comparerTimeout = 5000;
 
@@ -19,6 +20,7 @@ export class Minimap {
   comparer: CanvasComparer | undefined = undefined;
   settings: Settings | undefined = undefined;
   ui: MinimapUI | undefined = undefined;
+  equestrianMagic: EquestrianMagic | undefined = undefined;
   logger: Logger;
 
   templates: MinimapTemplateController = new MinimapTemplateController();
@@ -59,6 +61,7 @@ export class Minimap {
         this.rPlace!.embed.showColorPicker = true;
         const selectedColor = this.rPlace!.embed.selectedColor;
         this.logger.log(`Ready to place pixel [x: ${randPixel.x}, y: ${randPixel.y}, color: ${selectedColor}, current-color: ${currentColor.data}, new-color: ${imageDataRight.data}]`);
+        if(this.rPlace!.camera.cameraAnimation.paused) return true;
       } catch (err) {
         console.error("Error getting pixel to place", err);
       }
@@ -89,6 +92,7 @@ export class Minimap {
     this.maskCanvas.width = this.rPlaceCanvas.width;
     this.maskCanvas.height = this.rPlaceCanvas.height;
     this.comparer = new CanvasComparer(this.rPlaceCanvas, this.templateCanvas, this.maskCanvas);
+    this.equestrianMagic = new EquestrianMagic(this);
 
     this.settings.addSetting(
       "templateName",
@@ -120,6 +124,9 @@ export class Minimap {
       "autoColor",
       new CheckboxSetting("Auto color picker", enableAutoColorSetting, (autoColorSettings) => {
         GM.setValue('enableAutoColor', autoColorSettings.enabled);
+        if(autoColorSettings.enabled){
+          this.settings!.getSetting("equestrianMagic").enabled = false;
+        }
       })
     );
 
@@ -128,7 +135,25 @@ export class Minimap {
       "autoPick",
       new CheckboxSetting("Use the priority-based template", enableAutoPickSetting, (autoPickSetting) => {
         GM.setValue('enableAutoPick', autoPickSetting.enabled);
+        if(!autoPickSetting.enabled){
+          this.settings!.getSetting("equestrianMagic").enabled = false;
+        }
         this.templates!.fetch(autoPickSetting.enabled);
+      })
+    );
+
+    const enableEquestrianMagicSetting = await GM.getValue('enableEquestrianMagic', false);
+    this.settings.addSetting(
+      "equestrianMagic",
+      new CheckboxSetting("Pinch of Equestrian Magic", enableEquestrianMagicSetting, (equestrianMagicSetting) => {
+        GM.setValue('enableEquestrianMagic', equestrianMagicSetting.enabled);
+        if(equestrianMagicSetting.enabled){
+          this.settings!.getSetting("autoColor").enabled = false;
+          this.settings!.getSetting("autoPick").enabled = true;
+          this.equestrianMagic!.turnOn();
+        } else {
+          this.equestrianMagic!.turnOff();
+        }
       })
     );
 
@@ -205,6 +230,7 @@ export class Minimap {
       }
     });
 
+    this.settings.getSetting("equestrianMagic").enabled = enableEquestrianMagicSetting;
     await this.templates.fetch(this.settings.getSetting("autoPick").enabled);
   }
 
