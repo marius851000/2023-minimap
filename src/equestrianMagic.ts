@@ -20,11 +20,12 @@ export class EquestrianMagic {
     return pseudoWaitingMinTimeout + Math.floor(Math.random() * (pseudoWaitingMaxTimeout - pseudoWaitingMinTimeout));
   }
   private async processPinchOfMagic(){
+    console.log("processing pinch of magic!")
     this.audio.play();
     const pillStatus = this.minimap.rPlace!.embed
-      .shadowRoot!.querySelector("garlic-bread-status-pill")!
-      .shadowRoot!.querySelector(".main-text")!.innerHTML;
-    if(pillStatus.includes("Place!")){
+      .shadowRoot!.querySelector("garlic-bread-status-pill")!;
+    let nexttilein = pillStatus.attributes["next-tile-available-in"];
+    if (nexttilein == undefined || nexttilein.value == "0") {
       this.minimap.rPlace!.camera.applyPosition({
         x: this.minimap.rPlace!.canvas.width / 2,
         y: this.minimap.rPlace!.canvas.height / 2,
